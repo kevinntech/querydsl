@@ -94,9 +94,7 @@ class MemberRepositoryTest {
         Page<MemberTeamDto> result = memberRepository.searchPageSimple(condition, pageRequest);
 
         assertThat(result.getSize()).isEqualTo(3);
-        System.out.println(result.getContent());
-
-        //assertThat(result.getContent()).extracting("username").containsExactly("member1", "member2", "member3");
+        assertThat(result.getContent()).extracting("username").containsExactly("member1", "member2", "member3");
     }
 
 }
